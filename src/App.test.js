@@ -10,10 +10,10 @@ it('renders without crashing', () => {
 });
 
 describe('App', () => {
-    it('renders the form title', () => {
+    it('renders a one when the evaluate button is clicked', () => {
         const wrapper = shallow(<App/>);
-        const title = wrapper.find('.form-title').text();
+        wrapper.find('button').simulate('click');
 
-        expect(title).toEqual('React FizzBuzz Form');
+        expect(wrapper.find('.fizz-buzz-result').text()).toEqual('1');
     });
 });
