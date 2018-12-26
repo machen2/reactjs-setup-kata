@@ -69,4 +69,13 @@ describe('App', () => {
 
         expect(displayText).toEqual('FizzBuzz');
     });
+
+    it('displays FizzBuzz upon button click when a multiple of 15 is input', () => {
+        wrapper.find('input').simulate('change', { target: { value: '30' } });
+        wrapper.find('button').simulate('click');
+
+        const displayText = wrapper.find('.fizz-buzz-result').text();
+
+        expect(displayText).toEqual('FizzBuzz');
+    });
 });
