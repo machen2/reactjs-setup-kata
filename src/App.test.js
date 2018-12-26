@@ -29,4 +29,11 @@ describe('App', () => {
 
         expect(wrapper.find('.fizz-buzz-result').text()).toEqual('Fizz');
     });
+
+    it('displays Buzz upon button click when the user inputs a 5', () => {
+       wrapper.find('input').simulate('change', { target: { value: '5' } });
+       wrapper.find('button').simulate('click');
+
+       expect(wrapper.find('.fizz-buzz-result').text()).toEqual('Buzz');
+    });
 });
