@@ -25,4 +25,13 @@ describe('App', () => {
 
         expect(wrapper.find('.fizz-buzz-result').text()).toEqual('2');
     });
+
+    it('displays Fizz upon button click when the user inputs a 3', () => {
+        const wrapper = shallow(<App/>);
+
+        wrapper.find('input').simulate('change', { target: { value: '3' } });
+        wrapper.find('button').simulate('click');
+
+        expect(wrapper.find('.fizz-buzz-result').text()).toEqual('Fizz');
+    });
 });

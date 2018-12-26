@@ -14,7 +14,11 @@ class App extends Component {
   }
 
   handleOnClick() {
-    this.setState({fizzBuzzResult: this.state.inputValue})
+    if(this.state.inputValue === '3') {
+        this.setState({fizzBuzzResult: 'Fizz'})
+    } else {
+        this.setState({fizzBuzzResult: this.state.inputValue})
+    }
   }
 
   handleChange(event) {
