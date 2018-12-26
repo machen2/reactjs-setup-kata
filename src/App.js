@@ -5,20 +5,27 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-        fizzBuzzResult: ''
+        fizzBuzzResult: '',
+        inputValue: '1'
     };
 
     this.handleOnClick = this.handleOnClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleOnClick() {
-    this.setState({fizzBuzzResult: '1'})
+    this.setState({fizzBuzzResult: this.state.inputValue})
+  }
+
+  handleChange(event) {
+    this.setState({inputValue: event.target.value})
   }
 
   render() {
     return (
       <div className="App">
         <h1 className='form-title'>React FizzBuzz Form</h1>
+        <input type='text' onChange={this.handleChange}/>
         <button onClick={this.handleOnClick}>Evaluate</button>
         <p className='fizz-buzz-result'>{this.state.fizzBuzzResult}</p>
       </div>

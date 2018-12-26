@@ -16,4 +16,13 @@ describe('App', () => {
 
         expect(wrapper.find('.fizz-buzz-result').text()).toEqual('1');
     });
+
+    it('displays the number the user inputs upon button click', () => {
+        const wrapper = shallow(<App/>);
+
+        wrapper.find('input').simulate('change', { target: { value: '2' } });
+        wrapper.find('button').simulate('click');
+
+        expect(wrapper.find('.fizz-buzz-result').text()).toEqual('2');
+    });
 });
