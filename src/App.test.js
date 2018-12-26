@@ -10,13 +10,6 @@ it('renders without crashing', () => {
 });
 
 describe('App', () => {
-    it('renders a one when the evaluate button is clicked', () => {
-        const wrapper = shallow(<App/>);
-        wrapper.find('button').simulate('click');
-
-        expect(wrapper.find('.fizz-buzz-result').text()).toEqual('1');
-    });
-
     it('displays the number the user inputs upon button click', () => {
         const wrapper = shallow(<App/>);
 

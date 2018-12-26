@@ -6,7 +6,7 @@ class App extends Component {
     super(props);
     this.state = {
         fizzBuzzResult: '',
-        inputValue: '1'
+        inputValue: ''
     };
 
     this.handleOnClick = this.handleOnClick.bind(this);
