@@ -20,27 +20,35 @@ describe('App', () => {
         wrapper.find('input').simulate('change', { target: { value: '2' } });
         wrapper.find('button').simulate('click');
 
-        expect(wrapper.find('.fizz-buzz-result').text()).toEqual('2');
+        const displayText = wrapper.find('.fizz-buzz-result').text();
+
+        expect(displayText).toEqual('2');
     });
 
     it('displays Fizz upon button click when the user inputs a 3', () => {
         wrapper.find('input').simulate('change', { target: { value: '3' } });
         wrapper.find('button').simulate('click');
 
-        expect(wrapper.find('.fizz-buzz-result').text()).toEqual('Fizz');
+        const displayText = wrapper.find('.fizz-buzz-result').text();
+
+        expect(displayText).toEqual('Fizz');
     });
 
     it('displays Buzz upon button click when the user inputs a 5', () => {
        wrapper.find('input').simulate('change', { target: { value: '5' } });
        wrapper.find('button').simulate('click');
 
-       expect(wrapper.find('.fizz-buzz-result').text()).toEqual('Buzz');
+       const displayText = wrapper.find('.fizz-buzz-result').text();
+
+       expect(displayText).toEqual('Buzz');
     });
 
     it('displays Fizz upon button click when a multiple of 3 is input', () => {
         wrapper.find('input').simulate('change', { target: { value: '6' } });
         wrapper.find('button').simulate('click');
 
-        expect(wrapper.find('.fizz-buzz-result').text()).toEqual('Fizz');
+        const displayText = wrapper.find('.fizz-buzz-result').text();
+
+        expect(displayText).toEqual('Fizz');
     });
 });
