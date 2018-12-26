@@ -36,4 +36,11 @@ describe('App', () => {
 
        expect(wrapper.find('.fizz-buzz-result').text()).toEqual('Buzz');
     });
+
+    it('displays Fizz upon button click when a multiple of 3 is input', () => {
+        wrapper.find('input').simulate('change', { target: { value: '6' } });
+        wrapper.find('button').simulate('click');
+
+        expect(wrapper.find('.fizz-buzz-result').text()).toEqual('Fizz');
+    });
 });
