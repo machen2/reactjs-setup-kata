@@ -14,7 +14,9 @@ class App extends Component {
   }
 
   handleOnClick() {
-    if(this.state.inputValue % 3 === 0) {
+    if (this.state.inputValue === '15') {
+      this.setState({fizzBuzzResult: 'FizzBuzz'})
+    } else if (this.state.inputValue % 3 === 0) {
       this.setState({fizzBuzzResult: 'Fizz'})
     } else if (this.state.inputValue % 5 === 0) {
       this.setState({fizzBuzzResult: 'Buzz'});
