@@ -35,8 +35,10 @@ class App extends Component {
     return (
       <div className='App'>
         <h1 className='form-title'>React FizzBuzz</h1>
-        <input type='text' onChange={this.handleChange}/>
-        <button onClick={this.handleOnClick}>Submit</button>
+        <form onSubmit={this.handleOnClick}>
+          <input id='input-box' type='text' onChange={this.handleChange} />
+          <input type='submit' value='Submit'/>
+        </form>
         {this.state.fizzBuzzResult !== '' && <p className='fizz-buzz-result'>{this.state.fizzBuzzResult}</p>}
       </div>
     );
