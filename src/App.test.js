@@ -18,7 +18,7 @@ describe('App', () => {
 
     it('displays the number the user inputs upon button click', () => {
         wrapper.find('#input-box').simulate('change', { target: { value: '2' } });
-        wrapper.find('form').simulate('submit');
+        wrapper.find('form').simulate('submit', { preventDefault () {} });
 
         const displayText = wrapper.find('.fizz-buzz-result').text();
 
@@ -27,7 +27,7 @@ describe('App', () => {
 
     it('displays Fizz upon button click when the user inputs a 3', () => {
         wrapper.find('#input-box').simulate('change', { target: { value: '3' } });
-        wrapper.find('form').simulate('submit');
+        wrapper.find('form').simulate('submit', { preventDefault () {} });
 
         const displayText = wrapper.find('.fizz-buzz-result').text();
 
@@ -36,7 +36,7 @@ describe('App', () => {
 
     it('displays Buzz upon button click when the user inputs a 5', () => {
        wrapper.find('#input-box').simulate('change', { target: { value: '5' } });
-        wrapper.find('form').simulate('submit');
+        wrapper.find('form').simulate('submit', { preventDefault () {} });
 
        const displayText = wrapper.find('.fizz-buzz-result').text();
 
@@ -45,7 +45,7 @@ describe('App', () => {
 
     it('displays Fizz upon button click when a multiple of 3 is input', () => {
         wrapper.find('#input-box').simulate('change', { target: { value: '6' } });
-        wrapper.find('form').simulate('submit');
+        wrapper.find('form').simulate('submit', { preventDefault () {} });
 
         const displayText = wrapper.find('.fizz-buzz-result').text();
 
@@ -54,7 +54,7 @@ describe('App', () => {
 
     it('displays Buzz upon button click when a multiple of 5 is input', () => {
         wrapper.find('#input-box').simulate('change', { target: { value: '10' } });
-        wrapper.find('form').simulate('submit');
+        wrapper.find('form').simulate('submit', { preventDefault () {} });
 
         const displayText = wrapper.find('.fizz-buzz-result').text();
 
@@ -63,7 +63,7 @@ describe('App', () => {
 
     it('displays FizzBuzz upon button click when 15 is input', () => {
         wrapper.find('#input-box').simulate('change', { target: { value: '15' } });
-        wrapper.find('form').simulate('submit');
+        wrapper.find('form').simulate('submit', { preventDefault () {} });
 
         const displayText = wrapper.find('.fizz-buzz-result').text();
 
@@ -72,7 +72,7 @@ describe('App', () => {
 
     it('displays FizzBuzz upon button click when a multiple of 15 is input', () => {
         wrapper.find('#input-box').simulate('change', { target: { value: '30' } });
-        wrapper.find('form').simulate('submit');
+        wrapper.find('form').simulate('submit', { preventDefault () {} });
 
         const displayText = wrapper.find('.fizz-buzz-result').text();
 
@@ -80,7 +80,7 @@ describe('App', () => {
     });
 
     it('does not display text upon page load when no input is given and the button is clicked', () => {
-        wrapper.find('form').simulate('submit');
+        wrapper.find('form').simulate('submit', { preventDefault () {} });
 
         expect(wrapper.find('.fizz-buzz-result').exists()).toEqual(false);
     });
