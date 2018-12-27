@@ -78,4 +78,10 @@ describe('App', () => {
 
         expect(displayText).toEqual('FizzBuzz');
     });
+
+    it('does not display text upon page load when no input is given and the button is clicked', () => {
+       wrapper.find('button').simulate('click');
+
+       expect(wrapper.find('.fizz-buzz-result').exists()).toEqual(false);
+    });
 });

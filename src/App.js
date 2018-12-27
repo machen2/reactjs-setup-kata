@@ -14,7 +14,9 @@ class App extends Component {
   }
 
   handleOnClick() {
-    if (this.state.inputValue % 15 === 0) {
+    if(this.state.inputValue === '') {
+      this.setState({fizzBuzzResult: ''})
+    } else if (this.state.inputValue % 15 === 0) {
       this.setState({fizzBuzzResult: 'FizzBuzz'})
     } else if (this.state.inputValue % 3 === 0) {
       this.setState({fizzBuzzResult: 'Fizz'})
@@ -31,11 +33,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1 className='form-title'>React FizzBuzz Form</h1>
+      <div className='App'>
+        <h1 className='form-title'>React FizzBuzz</h1>
         <input type='text' onChange={this.handleChange}/>
-        <button onClick={this.handleOnClick}>Evaluate</button>
-        <p className='fizz-buzz-result'>{this.state.fizzBuzzResult}</p>
+        <button onClick={this.handleOnClick}>Submit</button>
+        {this.state.fizzBuzzResult !== '' && <p className='fizz-buzz-result'>{this.state.fizzBuzzResult}</p>}
       </div>
     );
   }
