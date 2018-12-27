@@ -8,12 +8,9 @@ class App extends Component {
         fizzBuzzResult: '',
         inputValue: ''
     };
-
-    this.handleOnClick = this.handleOnClick.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleOnClick() {
+  handleOnClick = () => {
     if(this.state.inputValue === '') {
       this.setState({fizzBuzzResult: ''})
     } else if (this.state.inputValue % 15 === 0) {
@@ -25,11 +22,11 @@ class App extends Component {
     } else {
         this.setState({fizzBuzzResult: this.state.inputValue})
     }
-  }
+  };
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({inputValue: event.target.value})
-  }
+  };
 
   render() {
     return (
